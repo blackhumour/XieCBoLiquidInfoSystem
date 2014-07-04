@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+    <!-- NotesID校验 -->
+    <field name="notesid">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>NotesID is cannot be blank!</message>
+        </field-validator>
+        <field-validator type="email">
+            <message>NotesID is invalid!</message>
+        </field-validator>
+    </field>
+
+    <!-- Password校验 -->
+    <field name="password">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>Password is cannot be blank!</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="expression"><![CDATA[(\w{6,16})]]></param>
+            <message>Password must be 6~16 numbers and letters!</message>
+        </field-validator>
+    </field>
+</validators>  

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+    <!-- NotesID校验 -->
+    <field name="profile.notesid">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>E-mail is cannot be blank!</message>
+        </field-validator>
+        <field-validator type="stringlength">
+        	<param name="minLength">12</param>
+        	<param name="maxLength">100</param>
+        	<message>E-mail is invalid!</message>
+        </field-validator>
+        <field-validator type="email">
+            <message>E-mail is invalid!</message>
+        </field-validator>
+    </field>
+
+    <!-- Password校验 -->
+    <field name="profile.password">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>Password is cannot be blank!</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="expression"><![CDATA[(\w{6,16})]]></param>
+            <message>Password must be 6~16 numbers and letters!</message>
+        </field-validator>
+    </field>
+    
+    <!-- Name校验 -->
+    <field name="profile.name">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>Name is cannot be blank!</message>
+        </field-validator>
+        <field-validator type="stringlength">
+        	<param name="maxLength">100</param>
+        	<message>Name cannot more than 100 chars!</message>
+        </field-validator>
+    </field>
+    
+    <!-- Utilization校验 -->
+    <field name="profile.utilization">
+        <field-validator type="double">
+        	<param name="min">0</param>
+            <param name="max">300</param>
+            <message>Utilization must between 0 and 300!</message>
+        </field-validator>
+    </field>
+    
+    <!-- Location校验 -->
+    <field name="profile.location">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>Location is cannot be blank!</message>
+        </field-validator>
+    </field>
+</validators> 
